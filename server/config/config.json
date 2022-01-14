@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "0000",
+    "database": "motoroniq",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "0000",
+    "database": "motoroniq",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "motoroniq",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}

@@ -2,10 +2,12 @@ import Head from "next/head";
 import React from "react";
 import Image from "next/image";
 import Header from "../components/header";
+import style from "../styles/Home.module.css";
+import Button from "@mui/material/Button";
 
-const index = () => {
+const index: React.FC = () => {
   return (
-    <div>
+    <div className={style.mainBox}>
       <Head>
         <title>Motoroniq</title>
         <meta
@@ -14,15 +16,33 @@ const index = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Header />
-      <h1>
-        Bring your build
-        <br />
-        up a<br />
-        Gear!
-      </h1>
-      <Image src="/mercEngine.png" alt="Vercel Logo" width={250} height={300} />
+      <div className={style.box}>
+        <div className={style.hero}>
+          <div>
+            <h1>
+              <span className={style.hFirstPart}>Bring your build</span>
+              <br />
+              up a<br />
+              <span className={style.hLastPart}>Gear!</span>
+            </h1>
+            <Button color="secondary" variant="contained" className={style.btn}>
+              Get to building!
+            </Button>
+          </div>
+          <div className={style.engineIMG}>
+            <Image
+              src="/mercEngine.png"
+              alt="Engine"
+              width={270}
+              height={320}
+            />
+          </div>
+        </div>
+        <video loop>
+          <source src={"../public/vid.mp4"} type="video/mp4" />
+        </video>
+      </div>
 
       {/* <a onClick={() => console.log("yeah buddy")}>
         <Image
