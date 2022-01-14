@@ -73,3 +73,29 @@ exports.getEngine = async (req, res) => {
     res.sendStatus(500);
   }
 };
+
+exports.getInfo = async (req, res) => {
+  try {
+    const generation = await models.Generations.findOne({
+      where: {
+        id: req.body.IDs[0],
+      },
+    });
+    const engine = await models.Engines.findOne({
+      where: {
+        id: req.body.IDs[1],
+      },
+    });
+    if (engine === null || generation === null) {
+      console.log("Not found!");
+      res.status(404);
+      res.send("No data!");
+    } else {
+      res.status(200);
+      res.send([generation, engine]);
+    }
+  } catch (e) {
+    console.log(`🛑🛑🛑 getInfo in controller F-ed up ¯\(◉◡◔)/¯:`, e);
+    res.sendStatus(500);
+  }
+};

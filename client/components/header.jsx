@@ -7,7 +7,7 @@ const header = () => {
   return (
     <div>
       <div className={styles.header}>
-        <Link href="/build" className="test">
+        <Link href="/list" className="test">
           <Button
             href="#text-buttons"
             color="secondary"

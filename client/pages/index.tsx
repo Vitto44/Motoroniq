@@ -39,19 +39,7 @@ const index: React.FC = () => {
             />
           </div>
         </div>
-        <video loop>
-          <source src={"../public/vid.mp4"} type="video/mp4" />
-        </video>
       </div>
-
-      {/* <a onClick={() => console.log("yeah buddy")}>
-        <Image
-          src="https://www.carlogos.org/car-logos/chevrolet-logo.png"
-          alt="test"
-          width={240}
-          height={180}
-        />
-      </a> */}
     </div>
   );
 };

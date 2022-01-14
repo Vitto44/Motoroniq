@@ -12,7 +12,7 @@ function fetchRequest(path: string, options?: object) {
 }
 
 //Getting all of the Brands
-const getMakes = () => {
+const getMakes = (id?: number) => {
   return fetchRequest("/getMakes");
 };
 
@@ -43,6 +43,15 @@ function getEngines(id: number) {
   });
 }
 
-const ApiService = { getMakes, getModels, getGens, getEngines };
+//Gets info about engine and generation from its ID
+function getInfo(IDs: number[]) {
+  return fetchRequest("/getInfo", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ IDs }),
+  });
+}
+
+const ApiService = { getMakes, getModels, getGens, getEngines, getInfo };
 
 export default ApiService;

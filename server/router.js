@@ -9,5 +9,6 @@ router.get("/getMakes", controller.getMakes);
 router.post("/getModels", controller.getModels);
 router.post("/getGens", controller.getGenerations);
 router.post("/getEngine", controller.getEngine);
+router.post("/getInfo", controller.getInfo);
 
 module.exports = router;

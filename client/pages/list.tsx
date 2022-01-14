@@ -5,15 +5,17 @@ import { useState, useEffect } from "react";
 import CardComponent from "../components/cardComponent";
 import TextField from "@mui/material/TextField";
 import styles from "../styles/build.module.css";
+import { useRouter } from "next/router";
 
 const build = ({ makes }) => {
   const [search, setSearch] = useState("");
   const [cards, setCards] = useState(makes);
   const [IDs, setIDs] = useState([]);
+  const [names, setNames] = useState([]);
+
+  const router = useRouter();
 
   useEffect(() => {
-    console.log(IDs.length);
-
     if (IDs.length === 1) {
       apiService.getModels(IDs[0]).then((res) => {
         setCards(res), setSearch("");
@@ -27,11 +29,9 @@ const build = ({ makes }) => {
         setCards(res), setSearch("");
       });
     } else if (IDs.length === 4) {
-      apiService.getMakes().then((res) => setCards(res));
-      console.log(
-        "redirect user on a new page with the id and request data by id"
+      router.push(
+        `/build/${names[0]}&${IDs[0]}_${names[1]}&${IDs[1]}_${names[2]}&${IDs[2]}_${names[3]}&${IDs[3]}`
       );
-      setIDs([]);
     }
   }, [IDs]);
 
@@ -64,6 +64,7 @@ const build = ({ makes }) => {
                   key={el.id}
                   onClick={() => {
                     setIDs([...IDs, el.id]);
+                    setNames([...names, el.name]);
                   }}
                 >
                   <CardComponent info={el} />

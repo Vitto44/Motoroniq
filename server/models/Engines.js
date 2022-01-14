@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       base_torque: STRING(100),
       fuel_type: STRING(20),
       forced_induction: STRING(45),
+      picture: STRING,
     },
     {
       timestamps: false,

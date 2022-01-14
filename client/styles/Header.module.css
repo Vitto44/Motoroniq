@@ -6,13 +6,13 @@
 }
 
 .logo:hover {
-  background-color: #302f52;
+  background-color: #272640;
 }
 
 .header {
   padding-top: 1rem;
   height: 80px;
-  background-color: #272640;
+  background-color: #a17b28;
   color: #cccbcb;
   display: flex;
   justify-content: center;
@@ -47,5 +47,6 @@
 }
 
 .links:hover {
-  color: #e0dbdb;
+  color: #f7f7f7;
+  background-color: #272640a9;
 }
