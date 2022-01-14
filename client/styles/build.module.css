@@ -1,12 +1,20 @@
 .inputField {
   background-color: #f0f0f0;
-  border-radius: 0.5rem;
   width: 350px;
   margin-bottom: 2rem;
 }
 
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /* justify-content: space-between; */
+  gap: 10px;
+}
+
 .container {
+  margin: 10%;
+  justify-content: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }

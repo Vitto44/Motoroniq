@@ -5,22 +5,21 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
-const card = ({ name }) => {
+const card = ({ info }) => {
   return (
     <Card
-      sx={{ maxWidth: 300, minWidth: 300 }}
+      sx={{ maxWidth: 290, minWidth: 290 }}
       style={{
         backgroundColor: "#303052",
         padding: ".4rem",
-        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px;",
       }}
     >
       <CardActionArea>
         <CardMedia
           component="img"
           height="220"
-          image={`https://www.carlogos.org/car-logos/${name.toLowerCase()}-logo.png`}
-          alt={`${name} logo`}
+          image={info.picture}
+          alt={`${info.name} picture`}
           style={{ backgroundColor: "#f0f0f0" }}
         />
         <CardContent
@@ -30,7 +29,7 @@ const card = ({ name }) => {
           }}
         >
           <Typography variant="h4" component="div">
-            {name}
+            {info.name}
           </Typography>
         </CardContent>
       </CardActionArea>

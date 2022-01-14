@@ -1,5 +1,7 @@
 const BASE_URL = "http://localhost:4444";
 
+//Fetch store that will get a path and object as a second argument.
+
 function fetchRequest(path: string, options?: object) {
   return fetch(BASE_URL + path, options)
     .then((res) => (res.status < 400 ? res : Promise.reject()))
@@ -9,10 +11,12 @@ function fetchRequest(path: string, options?: object) {
     });
 }
 
+//Getting all of the Brands
 const getMakes = () => {
   return fetchRequest("/getMakes");
 };
 
+//Getting all of the models of the Brand when passed id of a Brand
 function getModels(id: number) {
   return fetchRequest("/getModels", {
     method: "POST",
@@ -21,6 +25,7 @@ function getModels(id: number) {
   });
 }
 
+//Gets all the generations when passed the id of an Model
 function getGens(id: number) {
   return fetchRequest("/getGens", {
     method: "POST",
@@ -29,6 +34,7 @@ function getGens(id: number) {
   });
 }
 
+//Gets all of the engines when passed the id of the Generation
 function getEngines(id: number) {
   return fetchRequest("/getEngine", {
     method: "POST",
