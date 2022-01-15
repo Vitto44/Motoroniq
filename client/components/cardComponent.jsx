@@ -10,7 +10,7 @@ const card = ({ info }) => {
     <Card
       sx={{ maxWidth: 290, minWidth: 290 }}
       style={{
-        backgroundColor: "#303052",
+        backgroundColor: "#707070",
         padding: ".4rem",
       }}
     >

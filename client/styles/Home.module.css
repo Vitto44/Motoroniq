@@ -4,19 +4,18 @@
   overflow-y: hidden;
   display: flex;
   align-items: center;
-  color: #cccbcb;
 }
 
 .btn {
   color: #cccbcb;
-  background-color: #72386f;
+  background-color: #a17b28;
   height: 60px;
   width: 200px;
   margin-top: 3rem;
 }
 
 .btn:hover {
-  background-color: #582c56;
+  background-color: #86651d;
 }
 
 .hero {
@@ -41,8 +40,4 @@
 .hLastPart {
   font-size: 8rem;
   margin-left: -1.5rem;
-}
-
-.video {
-  background-color: aquamarine;
 }
