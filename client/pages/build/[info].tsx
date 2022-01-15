@@ -5,6 +5,7 @@ import ApiService from "../api/apiService";
 import styles from "../../styles/info.module.css";
 import Header from "../../components/header";
 import Slider from "@mui/material/Slider";
+import PartInfoCard from "../../components/partInfoCard";
 
 const info: React.FC = () => {
   const router = useRouter();
@@ -39,6 +40,7 @@ const info: React.FC = () => {
           <h1>Audi A3 - 8P</h1>
           <h3>2.0L TFSI QUATTRO 6MT</h3>
           <div className={styles.carPartsInfo}>
+            <h2>Horse Power:</h2>
             <Slider
               sx={{
                 color: "#a17b28",
@@ -52,7 +54,13 @@ const info: React.FC = () => {
               marks
               step={10}
             />
-            <div>parts info</div>
+            <div className={styles.partCards}>
+              <PartInfoCard partInfo={"turbo"} />
+              <PartInfoCard partInfo={"turbo"} />
+              <PartInfoCard partInfo={"turbo"} />
+              <PartInfoCard partInfo={"turbo"} />
+              <PartInfoCard partInfo={"turbo"} />
+            </div>
           </div>
         </div>
       </div>

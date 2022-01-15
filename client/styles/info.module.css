@@ -21,7 +21,7 @@
 
 .componentInfo {
   border: solid #6e6e6e 5px;
-  width: 60%;
+  width: 40%;
   text-align: center;
   border-radius: 10px;
 }
@@ -41,6 +41,9 @@
   align-items: center;
 }
 
-.test {
-  width: 100%;
+.partCards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 }
