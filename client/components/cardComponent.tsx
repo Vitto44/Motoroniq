@@ -10,8 +10,8 @@ const card = ({ info }) => {
     <Card
       sx={{ maxWidth: 290, minWidth: 290 }}
       style={{
-        backgroundColor: "#707070",
-        padding: ".4rem",
+        boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
+        backgroundColor: "#e6e6e6",
       }}
     >
       <CardActionArea>
@@ -20,12 +20,12 @@ const card = ({ info }) => {
           height="220"
           image={info.picture}
           alt={`${info.name} picture`}
-          style={{ backgroundColor: "#f0f0f0" }}
+          // style={{ backgroundColor: "#f0f0f0" }}
         />
         <CardContent
           style={{
             textAlign: "center",
-            color: "#cccbcb",
+            // color: "#cccbcb",
           }}
         >
           <Typography variant="h4" component="div">

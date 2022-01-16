@@ -1,0 +1,37 @@
+.h4s {
+  background-color: rgb(49, 49, 49);
+  color: #cccbcb;
+  padding: 0.2rem;
+}
+
+.h2s {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  color: #505050;
+  font-size: 0.7rem;
+}
+
+.thr {
+  font-size: 1.2rem;
+}
+
+.out {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(146, 1, 1, 0.726);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}

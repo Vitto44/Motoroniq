@@ -7,7 +7,7 @@ const header = () => {
   return (
     <div>
       <div className={styles.header}>
-        <Link href="/list" className="test">
+        <Link href="/list">
           <Button
             href="#text-buttons"
             color="secondary"
@@ -26,7 +26,7 @@ const header = () => {
           />
         </Link>
 
-        <Link href="/build" className="test">
+        <Link href="/build">
           <Button
             href="#text-buttons"
             color="secondary"

@@ -1,5 +1,5 @@
 .inputField {
-  background-color: #f0f0f0;
+  background-color: #e6e6e6;
   width: 350px;
   margin-bottom: 2rem;
 }
@@ -8,8 +8,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  /* justify-content: space-between; */
-  gap: 10px;
+  gap: 15px;
 }
 
 .container {
