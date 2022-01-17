@@ -6,6 +6,7 @@ import styles from "../../styles/info.module.css";
 import Header from "../../components/header";
 import CardInfoCard from "../../components/carSection";
 import Components from "../../components/partsSection";
+import { InfoContext } from "../../utils/infoContexts";
 
 const info: React.FC = () => {
   const router = useRouter();
@@ -76,9 +77,8 @@ const info: React.FC = () => {
       threshold: specs[1].intake_manifold,
     },
     8: { id: 8, partName: "brakes", name: "Stock", threshold: specs[0].brakes },
-    9: { id: 9, partName: "head", name: "Stock", threshold: specs[1].head },
-    10: {
-      id: 10,
+    9: {
+      id: 9,
       partName: "differential",
       name: "Stock",
       threshold: specs[0].differential,
@@ -86,7 +86,14 @@ const info: React.FC = () => {
   });
 
   const [partStore, setPartStore] = useState({
-    1: [{ id: 2, partName: "turbo", name: "K04 K29", threshold: 300 }],
+    1: [
+      {
+        id: 2,
+        partName: "forced_induction",
+        name: "Turbo: K04 K29",
+        threshold: 300,
+      },
+    ],
     4: [
       {
         id: 1,
@@ -122,6 +129,9 @@ const info: React.FC = () => {
         setSpecs(res);
         setHp(res[1].base_power);
       });
+      ApiService.getParts().then((res) => {
+        setPartStore(res);
+      });
     }
   }, [router.isReady]);
 
@@ -129,29 +139,30 @@ const info: React.FC = () => {
     <div className={styles.layout}>
       <Header />
       <div className={styles.container}>
-        <Components
-          specs={specs}
-          parts={parts}
-          componentSearch={componentSearch}
-          setParts={setParts}
-          partStore={partStore}
-          setComponentSearch={setComponentSearch}
-          hp={hp}
-          setbruteForceRender={setbruteForceRender}
-          bruteForceRender={bruteForceRender}
-        />
-        <CardInfoCard
-          setComponentSearch={setComponentSearch}
-          modelMake={modelMake}
-          specs={specs}
-          hp={hp}
-          setParts={setParts}
-          setHp={setHp}
-          partSpecs={parts}
-          parts={parts}
-          setbruteForceRender={setbruteForceRender}
-          bruteForceRender={bruteForceRender}
-        />
+        {/* Oh boy, Am I glad I decided not to use Redux */}
+        <InfoContext.Provider
+          value={{
+            specs,
+            parts,
+            componentSearch,
+            setParts,
+            partStore,
+            setComponentSearch,
+            hp,
+            setbruteForceRender,
+            bruteForceRender,
+            modelMake,
+            setHp,
+          }}
+        >
+          <Components
+            parts={parts}
+            hp={hp}
+            componentSearch={componentSearch}
+            partStore={partStore}
+          />
+          <CardInfoCard parts={parts} partSpecs={parts} />
+        </InfoContext.Provider>
       </div>
     </div>
   );

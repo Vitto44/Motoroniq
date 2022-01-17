@@ -10,6 +10,8 @@ module.exports = (sequelize, DataTypes) => {
       },
       partName: STRING,
       threshold: INTEGER,
+      image: STRING,
+      partID: INTEGER,
     },
     {
       timestamps: false,

@@ -64,7 +64,7 @@ exports.getEngine = async (req, res) => {
     const arr = [];
     const allEngines = await models.Engines.findAll();
     for (let id of exactModel.engines.split(",")) {
-      for (engine of allEngines) {
+      for (let engine of allEngines) {
         if (engine.id === +id) {
           arr.push(engine);
         }
@@ -110,11 +110,51 @@ exports.getInfo = async (req, res) => {
   }
 };
 
+////////////////////////////////
+//      PARTS HIREARCHY       //
+////////////////////////////////
+// 1: "forced_induction"
+// 2: "air_filter"
+// 3: "fuel_pump"
+// 4: "injectors"
+// 5: "clutch"
+// 6: "exhaust"
+// 7: "intake_manifold"
+// 8: "brakes"
+// 9: "head"
+////////////////////////////////
+// const hirearchy = {
+//   1: "forced_induction",
+//   2: "air_filter",
+//   3: "fuel_pump",
+//   4: "injectors",
+//   5: "clutch",
+//   6: "exhaust",
+//   7: "intake_manifold",
+//   8: "brakes",
+//   9: "differential",
+// };
 exports.getParts = async (req, res) => {
   try {
-    const parts = await models.Parts.findAll();
+    const test = {
+      1: [],
+      2: [],
+      3: [],
+      4: [],
+      5: [],
+      6: [],
+      7: [],
+      8: [],
+      9: [],
+    };
+    await models.Parts.findAll().then((response) =>
+      response.map((el) => {
+        test[el.partID].push(el);
+      })
+    );
+
     res.status = 200;
-    res.send(parts);
+    res.send(test);
   } catch (e) {
     console.log(`🛑🛑🛑 getMakes in controller F-ed up ¯\\(◉◡◔)/¯:`, e);
     res.sendStatus(500);

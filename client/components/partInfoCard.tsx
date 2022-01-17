@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Card from "@mui/material/Card";
 import styles from "../styles/partInfoCard.module.css";
 import Image from "next/image";
+import { InfoContext } from "../utils/infoContexts";
 
-const partInfo = ({
-  specs,
-  part,
-  hp,
-  setComponentSearch,
-  store,
-  parts,
-  setParts,
-  setbruteForceRender,
-  bruteForceRender,
-}) => {
+const partInfo = ({ part, parts, store }) => {
+  const {
+    specs,
+    hp,
+    setComponentSearch,
+    setParts,
+    setbruteForceRender,
+    bruteForceRender,
+  } = useContext(InfoContext);
+
   const swapper = () => {
     setComponentSearch(part[0]);
 
@@ -32,9 +32,11 @@ const partInfo = ({
       <Card
         sx={{ minWidth: 215, maxWidth: 215 }}
         variant="outlined"
-        className={hp >= part[1].threshold ? styles.out : null}
+        className={hp > part[1].threshold ? styles.out : null}
       >
-        <h4 className={styles.h4s}>{part[1].partName}</h4>
+        <h4 className={styles.h4s}>
+          {part[1].partName.split("_").join(" ").toUpperCase()}
+        </h4>
         <div className={styles.img}>
           <Image
             src={

@@ -1,20 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "../styles/sections.module.css";
 import { Slider } from "@mui/material";
 import PartInfoCard from "./partInfoCard";
+import { InfoContext } from "../utils/infoContexts";
 
-const carInfoCard = ({
-  modelMake,
-  specs,
-  hp,
-  setHp,
-  partSpecs,
-  setParts,
-  setComponentSearch,
-  setbruteForceRender,
-  parts,
-  bruteForceRender,
-}) => {
+const carInfoCard = ({ partSpecs, parts }) => {
+  const { modelMake, specs, hp, setHp, setParts } = useContext(InfoContext);
+
   return (
     <div className={styles.CarInfo}>
       <h1>
@@ -43,16 +35,10 @@ const carInfoCard = ({
           {Object.entries(partSpecs).map((el) => {
             return (
               <PartInfoCard
-                specs={specs}
-                setParts={setParts}
                 part={el}
                 key={el[+0]}
-                hp={hp}
-                setComponentSearch={setComponentSearch}
                 store={false}
                 parts={parts}
-                setbruteForceRender={setbruteForceRender}
-                bruteForceRender={bruteForceRender}
               />
             );
           })}

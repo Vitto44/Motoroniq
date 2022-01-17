@@ -1,18 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "../styles/sections.module.css";
 import PartInfoCard from "./partInfoCard";
+import { InfoContext } from "../utils/infoContexts";
 
-const CardComponentCard = ({
-  specs,
-  componentSearch,
-  setParts,
-  partStore,
-  setComponentSearch,
-  hp,
-  parts,
-  setbruteForceRender,
-  bruteForceRender,
-}) => {
+const CardComponentCard = ({ componentSearch, partStore, hp, parts }) => {
+  const {} = useContext(InfoContext);
+
   const [currentStore, setCurrentStore] = useState([]);
 
   useEffect(() => {
@@ -30,15 +23,9 @@ const CardComponentCard = ({
                 return (
                   <div key={el.id}>
                     <PartInfoCard
-                      specs={specs}
                       part={[componentSearch, el]}
-                      hp={hp}
-                      setComponentSearch={setComponentSearch}
                       store={true}
                       parts={parts}
-                      setParts={setParts}
-                      setbruteForceRender={setbruteForceRender}
-                      bruteForceRender={bruteForceRender}
                     />
                   </div>
                 );
