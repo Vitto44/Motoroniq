@@ -8,8 +8,8 @@
   background-color: #d31e54;
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
-  color: #505050;
-  font-size: 1rem;
+  color: #f1f1f1;
+  font-size: 0.9rem;
 }
 
 .img {
@@ -22,22 +22,22 @@
 }
 
 .out {
-  animation: pulse 2s infinite;
+  animation: pulse 1.3s infinite;
 }
 
 @keyframes pulse {
   0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(146, 1, 1, 0.726);
+    transform: scale(0.97);
+    box-shadow: 0 0 0 0 rgba(146, 1, 1, 0.541);
   }
 
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0);
   }
 
   100% {
-    transform: scale(0.95);
+    transform: scale(0.97);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
 }

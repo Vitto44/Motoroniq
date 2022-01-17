@@ -3,6 +3,7 @@ import styles from "../styles/sections.module.css";
 import PartInfoCard from "./partInfoCard";
 
 const CardComponentCard = ({
+  specs,
   componentSearch,
   setParts,
   partStore,
@@ -29,6 +30,7 @@ const CardComponentCard = ({
                 return (
                   <div key={el.id}>
                     <PartInfoCard
+                      specs={specs}
                       part={[componentSearch, el]}
                       hp={hp}
                       setComponentSearch={setComponentSearch}

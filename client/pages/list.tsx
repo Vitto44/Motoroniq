@@ -31,6 +31,7 @@ const build = ({ makes }) => {
       });
     } else if (IDs.length === 3) {
       apiService.getEngines(IDs[2]).then((res) => {
+        console.log(res);
         setCards(res), setSearch("");
       });
     }

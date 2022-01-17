@@ -43,6 +43,7 @@ const carInfoCard = ({
           {Object.entries(partSpecs).map((el) => {
             return (
               <PartInfoCard
+                specs={specs}
                 setParts={setParts}
                 part={el}
                 key={el[+0]}

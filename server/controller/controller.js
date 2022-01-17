@@ -55,18 +55,28 @@ exports.getGenerations = async (req, res) => {
 
 exports.getEngine = async (req, res) => {
   try {
-    const data = await models.Engines.findAll({
+    //I had a issue with relations in a database and needed to move on , so... the most ugly and easy sollustion I came up with. This needs to fixed.
+    const exactModel = await models.Generations.findOne({
       where: {
         id: req.body.id,
       },
     });
-    if (data === null) {
+    const arr = [];
+    const allEngines = await models.Engines.findAll();
+    for (let id of exactModel.engines.split(",")) {
+      for (engine of allEngines) {
+        if (engine.id === +id) {
+          arr.push(engine);
+        }
+      }
+    }
+    if (arr === []) {
       console.log("Not found!");
       res.status(404);
       res.send("No data!");
     } else {
       res.status(200);
-      res.send(data);
+      res.send(arr);
     }
   } catch (e) {
     console.log(`🛑🛑🛑 getEngine in controller F-ed up ¯\(◉◡◔)/¯:`, e);
