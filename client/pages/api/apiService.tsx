@@ -52,13 +52,9 @@ function getInfo(IDs: number[]) {
   });
 }
 
-function getParts(IDs: number[]) {
-  return fetchRequest("/getParts", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ IDs }),
-  });
-}
+const getParts = () => {
+  return fetchRequest("/getParts");
+};
 
 const ApiService = {
   getMakes,

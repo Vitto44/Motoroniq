@@ -52,8 +52,6 @@ const partInfo = ({
         <h2 className={styles.h2s}>{part[1].name}</h2>
         <h4 className={styles.h4s}>Threshold HP</h4>
         <h2 className={(styles.h2s, styles.thr)}>{part[1].threshold}</h2>
-        <h4 className={styles.h4s}>Price in €</h4>
-        <h2 className={(styles.h2s, styles.thr)}>160</h2>
       </Card>
     </div>
   );

@@ -84,9 +84,10 @@ const info: React.FC = () => {
       threshold: specs[0].differential,
     },
   });
+
   const [partStore, setPartStore] = useState({
     1: [{ id: 2, partName: "turbo", name: "K04 K29", threshold: 300 }],
-    2: [
+    4: [
       {
         id: 1,
         partName: "injectors",

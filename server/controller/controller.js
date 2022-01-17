@@ -6,7 +6,7 @@ exports.getMakes = async (req, res) => {
     res.status = 200;
     res.send(makes);
   } catch (e) {
-    console.log(`🛑🛑🛑 getMakes in controller F-ed up ¯\(◉◡◔)/¯:`, e);
+    console.log(`🛑🛑🛑 getMakes in controller F-ed up ¯\\(◉◡◔)/¯:`, e);
     res.sendStatus(500);
   }
 };
@@ -27,7 +27,7 @@ exports.getModels = async (req, res) => {
       res.send(data);
     }
   } catch (e) {
-    console.log(`🛑🛑🛑 getMakes in controller F-ed up ¯\(◉◡◔)/¯:`, e);
+    console.log(`🛑🛑🛑 getMakes in controller F-ed up ¯\\(◉◡◔)/¯:`, e);
     res.sendStatus(500);
   }
 };
@@ -48,7 +48,7 @@ exports.getGenerations = async (req, res) => {
       res.send(data);
     }
   } catch (e) {
-    console.log(`🛑🛑🛑 getSpecs in controller F-ed up ¯\(◉◡◔)/¯:`, e);
+    console.log(`🛑🛑🛑 getSpecs in controller F-ed up ¯\\(◉◡◔)/¯:`, e);
     res.sendStatus(500);
   }
 };
@@ -79,7 +79,7 @@ exports.getEngine = async (req, res) => {
       res.send(arr);
     }
   } catch (e) {
-    console.log(`🛑🛑🛑 getEngine in controller F-ed up ¯\(◉◡◔)/¯:`, e);
+    console.log(`🛑🛑🛑 getEngine in controller F-ed up ¯\\(◉◡◔)/¯:`, e);
     res.sendStatus(500);
   }
 };
@@ -105,7 +105,18 @@ exports.getInfo = async (req, res) => {
       res.send([generation, engine]);
     }
   } catch (e) {
-    console.log(`🛑🛑🛑 getInfo in controller F-ed up ¯\(◉◡◔)/¯:`, e);
+    console.log(`🛑🛑🛑 getInfo in controller F-ed up ¯\\(◉◡◔)/¯:`, e);
+    res.sendStatus(500);
+  }
+};
+
+exports.getParts = async (req, res) => {
+  try {
+    const parts = await models.Parts.findAll();
+    res.status = 200;
+    res.send(parts);
+  } catch (e) {
+    console.log(`🛑🛑🛑 getMakes in controller F-ed up ¯\\(◉◡◔)/¯:`, e);
     res.sendStatus(500);
   }
 };
