@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 import Image from "next/image";
 import Header from "../components/header";
-import style from "../styles/Home.module.css";
+import style from "../styles/index.module.css";
 import Button from "@mui/material/Button";
 
 const index: React.FC = () => {

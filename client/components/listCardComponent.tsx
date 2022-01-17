@@ -11,7 +11,7 @@ const card = ({ info }) => {
       sx={{ maxWidth: 290, minWidth: 290 }}
       style={{
         boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
-        backgroundColor: "#e6e6e6",
+        backgroundColor: "#f5f5f5",
       }}
     >
       <CardActionArea>
@@ -20,15 +20,13 @@ const card = ({ info }) => {
           height="220"
           image={info.picture}
           alt={`${info.name} picture`}
-          // style={{ backgroundColor: "#f0f0f0" }}
         />
         <CardContent
           style={{
             textAlign: "center",
-            // color: "#cccbcb",
           }}
         >
-          <Typography variant="h4" component="div">
+          <Typography variant="h6" component="div">
             {info.name}
           </Typography>
         </CardContent>

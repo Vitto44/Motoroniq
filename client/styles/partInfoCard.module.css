@@ -5,10 +5,16 @@
 }
 
 .h2s {
-  margin-top: 0.2rem;
-  margin-bottom: 0.2rem;
+  background-color: #d31e54;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
   color: #505050;
-  font-size: 0.7rem;
+  font-size: 1rem;
+}
+
+.img {
+  /* padding: 12px; */
+  object-fit: cover;
 }
 
 .thr {

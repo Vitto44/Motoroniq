@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/info.module.css";
+import styles from "../styles/sections.module.css";
 import { Slider } from "@mui/material";
 import PartInfoCard from "./partInfoCard";
 
@@ -11,6 +11,9 @@ const carInfoCard = ({
   partSpecs,
   setParts,
   setComponentSearch,
+  setbruteForceRender,
+  parts,
+  bruteForceRender,
 }) => {
   return (
     <div className={styles.CarInfo}>
@@ -40,10 +43,15 @@ const carInfoCard = ({
           {Object.entries(partSpecs).map((el) => {
             return (
               <PartInfoCard
+                setParts={setParts}
                 part={el}
                 key={el[+0]}
                 hp={hp}
                 setComponentSearch={setComponentSearch}
+                store={false}
+                parts={parts}
+                setbruteForceRender={setbruteForceRender}
+                bruteForceRender={bruteForceRender}
               />
             );
           })}

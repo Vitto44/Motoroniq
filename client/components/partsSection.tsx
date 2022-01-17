@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
-import styles from "../styles/componentStoreList.module.css";
+import styles from "../styles/sections.module.css";
 import PartInfoCard from "./partInfoCard";
 
 const CardComponentCard = ({
   componentSearch,
   setParts,
   partStore,
-  setPartStore,
   setComponentSearch,
   hp,
+  parts,
+  setbruteForceRender,
+  bruteForceRender,
 }) => {
   const [currentStore, setCurrentStore] = useState([]);
+
   useEffect(() => {
     setCurrentStore(partStore[componentSearch]);
   }, [componentSearch]);
@@ -24,12 +27,18 @@ const CardComponentCard = ({
               .filter((el) => (el.threshold < hp ? null : el))
               .map((el) => {
                 return (
-                  <PartInfoCard
-                    part={[componentSearch, el]}
-                    key={el.id}
-                    hp={hp}
-                    setComponentSearch={setComponentSearch}
-                  />
+                  <div key={el.id}>
+                    <PartInfoCard
+                      part={[componentSearch, el]}
+                      hp={hp}
+                      setComponentSearch={setComponentSearch}
+                      store={true}
+                      parts={parts}
+                      setParts={setParts}
+                      setbruteForceRender={setbruteForceRender}
+                      bruteForceRender={bruteForceRender}
+                    />
+                  </div>
                 );
               })
           : null}

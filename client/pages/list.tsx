@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/header";
 import apiService from "./api/apiService";
 import { useState, useEffect } from "react";
-import CardComponent from "../components/cardComponent";
+import CardComponent from "../components/listCardComponent";
 import TextField from "@mui/material/TextField";
 import styles from "../styles/list.module.css";
 import { useRouter } from "next/router";
