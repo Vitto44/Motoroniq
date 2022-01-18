@@ -123,17 +123,7 @@ exports.getInfo = async (req, res) => {
 // 8: "brakes"
 // 9: "head"
 ////////////////////////////////
-// const hirearchy = {
-//   1: "forced_induction",
-//   2: "air_filter",
-//   3: "fuel_pump",
-//   4: "injectors",
-//   5: "clutch",
-//   6: "exhaust",
-//   7: "intake_manifold",
-//   8: "brakes",
-//   9: "differential",
-// };
+
 exports.getParts = async (req, res) => {
   try {
     const test = {
@@ -152,11 +142,10 @@ exports.getParts = async (req, res) => {
         test[el.partID].push(el);
       })
     );
-
     res.status = 200;
     res.send(test);
   } catch (e) {
-    console.log(`🛑🛑🛑 getMakes in controller F-ed up ¯\\(◉◡◔)/¯:`, e);
+    console.log(`🛑🛑🛑 getParts in controller F-ed up ¯\\(◉◡◔)/¯:`, e);
     res.sendStatus(500);
   }
 };
