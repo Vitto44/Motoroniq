@@ -1,21 +1,28 @@
 .box {
-  height: calc(100vh - 80px);
+  height: 100vh;
   max-width: 1800px;
   overflow-y: hidden;
   display: flex;
   align-items: center;
 }
+.hFirstPart {
+  font-size: 4.5rem;
+}
 
+.hLastPart {
+  line-height: 10rem;
+  font-size: 10rem;
+}
 .btn {
-  color: #cccbcb;
-  background-color: #a17b28;
-  height: 60px;
-  width: 200px;
-  margin-top: 3rem;
+  color: #e2e1e1;
+  background-color: #d31e54;
+  height: 70px;
+  width: 300px;
+  margin-top: 1.5rem;
 }
 
 .btn:hover {
-  background-color: #86651d;
+  background-color: #c70525;
 }
 
 .hero {
@@ -29,14 +36,41 @@
 .engineIMG {
   flex: 50%;
   margin-top: 8rem;
-  margin-left: -15rem;
+  margin-left: -10rem;
+  margin-right: 1rem;
+  transition: all 0.4s ease-in-out;
+  animation: float 4s ease-in-out infinite;
 }
 
-.hFirstPart {
-  font-size: 4.5rem;
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-15px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
 }
 
-.hLastPart {
-  font-size: 8rem;
-  margin-left: -1.5rem;
+.showBox,
+.showBoxParts {
+  margin-bottom: -6.6rem;
+  background-color: #d31e54;
+  color: #e2e1e1;
+  font-size: 2rem;
+  padding: 3rem;
+  margin-right: 10vw;
+  transform: skew(-22deg) translate(-1px, 0px);
+  -webkit-transform: skew(-22deg) translate(-1px, 0px);
+  -moz-transform: skew(-22deg) translate(-1px, 0px);
+}
+.showBoxParts {
+  margin-bottom: -4rem;
+}
+
+.easyAsThat {
+  font-size: 3rem;
+  margin-right: 12vw;
 }

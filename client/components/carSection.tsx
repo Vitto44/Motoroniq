@@ -3,6 +3,7 @@ import styles from "../styles/sections.module.css";
 import { Slider } from "@mui/material";
 import PartInfoCard from "./partInfoCard";
 import { InfoContext } from "../utils/infoContexts";
+import EcuInfoCard from "./ecuInfoCard";
 
 const carInfoCard = ({ partSpecs, parts }) => {
   const { modelMake, specs, hp, setHp, setParts } = useContext(InfoContext);
@@ -17,7 +18,7 @@ const carInfoCard = ({ partSpecs, parts }) => {
         <h2 className={styles.hpMeter}>Horse Power: {hp}</h2>
         <Slider
           sx={{
-            color: "#a17b28",
+            color: "#d31e54",
             height: "10px",
             padding: "7px",
           }}
@@ -32,13 +33,14 @@ const carInfoCard = ({ partSpecs, parts }) => {
           }}
         />
         <div className={styles.partCards}>
+          <EcuInfoCard />
           {Object.entries(partSpecs).map((el) => {
             return (
               <PartInfoCard
                 part={el}
-                key={el[+0]}
                 store={false}
                 parts={parts}
+                key={el[+0]}
               />
             );
           })}

@@ -4,6 +4,8 @@ The whole idea of it is to help you with your car project by telling you what yo
 
 ## Quick List of what's happening and where.
 
+First npm i on server and client might be good idea, since there are few dependencies.
+
 ### Client
 
 Uses React and nextJS + there some material-UI sprinkled in.
@@ -17,3 +19,8 @@ Uses React and nextJS + there some material-UI sprinkled in.
 Uses Express with mySQL as database(not the smallest may I add.) and Sequelize as ORM
 
 - standart structure, index === index, router === router, models(sequelize) === models, all requests are handled in controller
+
+### Database
+
+- For now it's dummed down to just few tables: makes, models, generations, engines and parts
+- Everything has a one to many relationship apart from gen and engines (quite a few engines can be used in diff. cars, that's why many to many)

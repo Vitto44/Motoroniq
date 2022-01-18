@@ -51,9 +51,11 @@ const partInfo = ({ part, parts, store }) => {
             objectFit="cover"
           />
         </div>
-        <h2 className={styles.h2s}>{part[1].name}</h2>
+        <h2 className={part[1].name === "Stock" ? styles.stock : styles.h2s}>
+          {part[1].name}
+        </h2>
         <h4 className={styles.h4s}>Threshold HP</h4>
-        <h2 className={(styles.h2s, styles.thr)}>{part[1].threshold}</h2>
+        <h2 className={styles.thr}>{part[1].threshold}</h2>
       </Card>
     </div>
   );

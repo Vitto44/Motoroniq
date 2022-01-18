@@ -12,7 +12,7 @@ const info: React.FC = () => {
   const router = useRouter();
 
   const [modelMake, setModelMake] = useState(["Make", "Model"]);
-  const [componentSearch, setComponentSearch] = useState("Components");
+  const [componentSearch, setComponentSearch] = useState(0);
   const [hp, setHp] = useState(0);
   const [bruteForceRender, setbruteForceRender] = useState(false);
   //////////////////////////////////////////////////////////////////
@@ -85,38 +85,7 @@ const info: React.FC = () => {
     },
   });
 
-  const [partStore, setPartStore] = useState({
-    1: [
-      {
-        id: 2,
-        partName: "forced_induction",
-        name: "Turbo: K04 K29",
-        threshold: 300,
-      },
-    ],
-    4: [
-      {
-        id: 1,
-        partName: "injectors",
-        name: "ComoR 1",
-        threshold: 345,
-      },
-      {
-        id: 2,
-        partName: "injectors",
-        name: "I-J51",
-        threshold: 450,
-      },
-    ],
-    3: [
-      {
-        id: 1,
-        partName: "fuelPump",
-        name: "Perfor 12",
-        threshold: 190,
-      },
-    ],
-  });
+  const [partStore, setPartStore] = useState({});
 
   //Getting Query Strings and spliting them on _ and &.
   //First one is a name and second is an ID.
@@ -137,7 +106,7 @@ const info: React.FC = () => {
 
   return (
     <div className={styles.layout}>
-      <Header />
+      {/* <Header /> */}
       <div className={styles.container}>
         {/* Oh boy, Am I glad I decided not to use Redux */}
         <InfoContext.Provider
@@ -157,9 +126,13 @@ const info: React.FC = () => {
         >
           <Components
             parts={parts}
+            partStore={partStore}
             hp={hp}
             componentSearch={componentSearch}
-            partStore={partStore}
+            specs={specs}
+            setParts={setParts}
+            setbruteForceRender={setbruteForceRender}
+            bruteForceRender={bruteForceRender}
           />
           <CardInfoCard parts={parts} partSpecs={parts} />
         </InfoContext.Provider>

@@ -1,19 +1,26 @@
 .h4s {
-  background-color: rgb(49, 49, 49);
+  background-color: #313131;
   color: #cccbcb;
   padding: 0.2rem;
 }
 
-.h2s {
-  background-color: #d31e54;
+.h2s,
+.stock {
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
   color: #f1f1f1;
   font-size: 0.9rem;
 }
 
+.stock {
+  background-color: #1eafd3;
+}
+
+.h2s {
+  background-color: #d31e54;
+}
+
 .img {
-  /* padding: 12px; */
   object-fit: cover;
 }
 
@@ -28,7 +35,7 @@
 @keyframes pulse {
   0% {
     transform: scale(0.97);
-    box-shadow: 0 0 0 0 rgba(146, 1, 1, 0.541);
+    box-shadow: 0 0 0 0 rgba(235, 7, 7, 0.541);
   }
 
   70% {
