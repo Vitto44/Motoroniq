@@ -6,11 +6,14 @@ import { InfoContext } from "../utils/infoContexts";
 
 //Every time the power is changed cars ECU will need to know abut it, this willl change automatically when power is moved
 
-const EcuInfoCard = () => {
-  const { hp, specs } = useContext(InfoContext);
+const EcuInfoCard = ({ hp, specs }) => {
+  // const {  } = useContext(InfoContext);
   return (
     <div>
-      <Card sx={{ minWidth: 215, maxWidth: 215 }} variant="outlined">
+      <Card
+        sx={{ minWidth: 215, maxWidth: 215, cursor: "not-allowed" }}
+        variant="outlined"
+      >
         <h4 className={styles.h4s}>ECU Tune</h4>
         <div className={styles.img}>
           <Image

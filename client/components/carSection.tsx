@@ -5,8 +5,19 @@ import PartInfoCard from "./partInfoCard";
 import { InfoContext } from "../utils/infoContexts";
 import EcuInfoCard from "./ecuInfoCard";
 
-const carInfoCard = ({ partSpecs, parts }) => {
-  const { modelMake, specs, hp, setHp, setParts } = useContext(InfoContext);
+const carInfoCard = ({
+  partSpecs,
+  parts,
+  modelMake,
+  specs,
+  hp,
+  setHp,
+  setParts,
+  bruteForceRender,
+  setBruteForceRender,
+  setComponentSearch,
+}) => {
+  // const {  } = useContext(InfoContext);
 
   return (
     <div className={styles.CarInfo}>
@@ -33,14 +44,20 @@ const carInfoCard = ({ partSpecs, parts }) => {
           }}
         />
         <div className={styles.partCards}>
-          <EcuInfoCard />
+          <EcuInfoCard hp={hp} specs={specs} />
           {Object.entries(partSpecs).map((el) => {
             return (
               <PartInfoCard
+                key={el[+0]}
                 part={el}
                 store={false}
                 parts={parts}
-                key={el[+0]}
+                specs={specs}
+                hp={hp}
+                setComponentSearch={setComponentSearch}
+                setParts={setParts}
+                setbruteForceRender={setBruteForceRender}
+                bruteForceRender={bruteForceRender}
               />
             );
           })}

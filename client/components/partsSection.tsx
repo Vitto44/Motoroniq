@@ -13,6 +13,7 @@ const CardComponentCard = ({
   setParts,
   setbruteForceRender,
   bruteForceRender,
+  setComponentSearch,
 }) => {
   const [currentStore, setCurrentStore] = useState([]);
 
@@ -59,6 +60,12 @@ const CardComponentCard = ({
                       part={[componentSearch, el]}
                       store={true}
                       parts={parts}
+                      specs={specs}
+                      hp={hp}
+                      setComponentSearch={setComponentSearch}
+                      setParts={setParts}
+                      setbruteForceRender={setbruteForceRender}
+                      bruteForceRender={bruteForceRender}
                     />
                   </div>
                 );

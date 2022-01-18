@@ -133,8 +133,20 @@ const info: React.FC = () => {
             setParts={setParts}
             setbruteForceRender={setbruteForceRender}
             bruteForceRender={bruteForceRender}
+            setComponentSearch={setComponentSearch}
           />
-          <CardInfoCard parts={parts} partSpecs={parts} />
+          <CardInfoCard
+            parts={parts}
+            partSpecs={parts}
+            modelMake={modelMake}
+            specs={specs}
+            hp={hp}
+            setHp={setHp}
+            setParts={setParts}
+            bruteForceRender={bruteForceRender}
+            setBruteForceRender={setbruteForceRender}
+            setComponentSearch={setComponentSearch}
+          />
         </InfoContext.Provider>
       </div>
     </div>

@@ -4,15 +4,18 @@ import styles from "../styles/partInfoCard.module.css";
 import Image from "next/image";
 import { InfoContext } from "../utils/infoContexts";
 
-const partInfo = ({ part, parts, store }) => {
-  const {
-    specs,
-    hp,
-    setComponentSearch,
-    setParts,
-    setbruteForceRender,
-    bruteForceRender,
-  } = useContext(InfoContext);
+const partInfo = ({
+  part,
+  parts,
+  store,
+  specs,
+  hp,
+  setComponentSearch,
+  setParts,
+  setbruteForceRender,
+  bruteForceRender,
+}) => {
+  // const {} = useContext(InfoContext);
 
   const swapper = () => {
     setComponentSearch(part[0]);
@@ -30,7 +33,7 @@ const partInfo = ({ part, parts, store }) => {
   return (
     <div onClick={() => swapper()}>
       <Card
-        sx={{ minWidth: 215, maxWidth: 215 }}
+        sx={{ minWidth: 215, maxWidth: 215, cursor: "pointer" }}
         variant="outlined"
         className={hp > part[1].threshold ? styles.out : null}
       >
