@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       threshold: INTEGER,
       image: STRING,
       partID: INTEGER,
+      price: INTEGER,
     },
     {
       timestamps: false,

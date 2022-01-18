@@ -10,10 +10,7 @@ const EcuInfoCard = ({ hp, specs }) => {
   // const {  } = useContext(InfoContext);
   return (
     <div>
-      <Card
-        sx={{ minWidth: 215, maxWidth: 215, cursor: "not-allowed" }}
-        variant="outlined"
-      >
+      <Card sx={{ minWidth: 215, maxWidth: 215, cursor: "not-allowed" }}>
         <h4 className={styles.h4s}>ECU Tune</h4>
         <div className={styles.img}>
           <Image
@@ -29,11 +26,15 @@ const EcuInfoCard = ({ hp, specs }) => {
             objectFit="cover"
           />
         </div>
-        <h2 className={hp <= specs[1].base_power ? styles.stock : styles.h2s}>
+        <h2 className={hp <= specs[1].base_power ? styles.disab : styles.tune}>
           ECU Tune
         </h2>
         <h4 className={styles.h4s}>Threshold HP</h4>
         <h2 className={(styles.h2s, styles.thr)}>{hp}</h2>
+        <h4 className={styles.h4s}>Price in EUR</h4>
+        <h2 className={styles.thr}>
+          {hp > specs[1].base_power ? 250 : "Already In"}
+        </h2>
       </Card>
     </div>
   );

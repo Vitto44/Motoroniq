@@ -14,6 +14,7 @@ const info: React.FC = () => {
   const [modelMake, setModelMake] = useState(["Make", "Model"]);
   const [componentSearch, setComponentSearch] = useState(0);
   const [hp, setHp] = useState(0);
+  const [total, setTotal] = useState(0);
   const [bruteForceRender, setbruteForceRender] = useState(false);
   //////////////////////////////////////////////////////////////////
   const [specs, setSpecs] = useState([
@@ -134,6 +135,8 @@ const info: React.FC = () => {
             setbruteForceRender={setbruteForceRender}
             bruteForceRender={bruteForceRender}
             setComponentSearch={setComponentSearch}
+            total={total}
+            setTotal={setTotal}
           />
           <CardInfoCard
             parts={parts}

@@ -5,19 +5,28 @@
 }
 
 .h2s,
-.stock {
+.stock,
+.disab,
+.tune {
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
   color: #f1f1f1;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 
 .stock {
   background-color: #1eafd3;
 }
+.disab {
+  background-color: #9dac15;
+}
 
 .h2s {
   background-color: #d31e54;
+}
+
+.tune {
+  background-color: #03ad58;
 }
 
 .img {
@@ -26,6 +35,7 @@
 
 .thr {
   font-size: 1.2rem;
+  background-color: #dddddd;
 }
 
 .out {

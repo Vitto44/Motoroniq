@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@500;700&display=swap");
 
 body {
-  background-color: #f5f5f5;
+  background-image: url("../public/interlaced.png");
   color: #494949;
 }
 a {
@@ -16,4 +16,22 @@ a {
   margin: 0;
   padding: 0;
   font-family: "Teko", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #bbbbbb;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #464646;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5f5f5f;
 }

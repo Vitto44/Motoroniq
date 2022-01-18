@@ -8,8 +8,10 @@
 }
 
 .CarInfo {
+  background-color: #fcfcfc;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   width: 59%;
+
   text-align: center;
   border-radius: 10px;
   overflow-x: auto;
@@ -17,7 +19,6 @@
 
 .carPartsInfo {
   width: 90%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,6 +26,7 @@
 }
 
 .componentInfo {
+  background-color: #fcfcfc;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   width: 39%;
   text-align: center;
@@ -46,9 +48,9 @@
   border-bottom: #2b2b2b solid 2px;
 }
 
-.total {
+.price {
   font-size: 1.3rem;
   position: absolute;
-  top: 62px;
+  top: 22px;
   margin: 0.5rem;
 }

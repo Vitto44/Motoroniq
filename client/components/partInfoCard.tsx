@@ -34,7 +34,6 @@ const partInfo = ({
     <div onClick={() => swapper()}>
       <Card
         sx={{ minWidth: 215, maxWidth: 215, cursor: "pointer" }}
-        variant="outlined"
         className={hp > part[1].threshold ? styles.out : null}
       >
         <h4 className={styles.h4s}>
@@ -51,7 +50,7 @@ const partInfo = ({
             width="215"
             height="140"
             layout="responsive"
-            objectFit="cover"
+            objectFit="contain"
           />
         </div>
         <h2 className={part[1].name === "Stock" ? styles.stock : styles.h2s}>
@@ -59,6 +58,10 @@ const partInfo = ({
         </h2>
         <h4 className={styles.h4s}>Threshold HP</h4>
         <h2 className={styles.thr}>{part[1].threshold}</h2>
+        <h4 className={styles.h4s}>Price in EUR</h4>
+        <h2 className={styles.thr}>
+          {part[1].price ? part[1].price : "Already In"}
+        </h2>
       </Card>
     </div>
   );

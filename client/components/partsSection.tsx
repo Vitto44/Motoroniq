@@ -14,8 +14,18 @@ const CardComponentCard = ({
   setbruteForceRender,
   bruteForceRender,
   setComponentSearch,
+  total,
+  setTotal,
 }) => {
   const [currentStore, setCurrentStore] = useState([]);
+
+  useEffect(() => {
+    let i = 0;
+    Object.values(parts).forEach((element) => {
+      if (element.price) i += element.price;
+    });
+    setTotal(i);
+  }, [bruteForceRender]);
 
   useEffect(() => {
     setCurrentStore(partStore[componentSearch]);
@@ -72,6 +82,9 @@ const CardComponentCard = ({
               })
           : null}
       </div>
+      <h4 className={styles.price}>
+        TOTAL: {hp > specs[1].base_power ? total + 250 : total} EUR
+      </h4>
     </div>
   );
 };

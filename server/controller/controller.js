@@ -61,22 +61,25 @@ exports.getEngine = async (req, res) => {
         id: req.body.id,
       },
     });
-    const arr = [];
-    const allEngines = await models.Engines.findAll();
-    for (let id of exactModel.engines.split(",")) {
-      for (let engine of allEngines) {
-        if (engine.id === +id) {
-          arr.push(engine);
-        }
-      }
+
+    const engines = [];
+
+    for (let i of exactModel.engines.split(",")) {
+      const test = await models.Engines.findOne({
+        where: {
+          id: +i,
+        },
+      });
+      engines.push(test);
     }
-    if (arr === []) {
+
+    if (engines === []) {
       console.log("Not found!");
       res.status(404);
       res.send("No data!");
     } else {
       res.status(200);
-      res.send(arr);
+      res.send(engines);
     }
   } catch (e) {
     console.log(`🛑🛑🛑 getEngine in controller F-ed up ¯\\(◉◡◔)/¯:`, e);
@@ -124,6 +127,7 @@ exports.getInfo = async (req, res) => {
 // 9: "head"
 ////////////////////////////////
 
+//TODO add filters so it would return relevant parts
 exports.getParts = async (req, res) => {
   try {
     const test = {
