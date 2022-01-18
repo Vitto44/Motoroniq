@@ -1,17 +1,19 @@
-# Codeworks code reviews
+# Car Project - Helper... Thing
 
-This repo is used to do code reviews for entire projects from students.
+The whole idea of it is to help you with your car project by telling you what you need to swap in order to get to that power (right now, due to time restrain, only monitoring HP).
 
-## Getting started
+## Quick List of what's happening and where.
 
-- Make sure you have a linter set up (e.g. [ESLint](https://eslint.org/)), otherwise please add one to your project and lint the code.
-- Check that you have a `.gitignore` file in your repo, otherwise copy the one you find in this repo and add it to your project as a starting point.
-- In case you have already forked this repo in the past, before continuing first delete your fork (any associated pull requests are not deleted, don’t worry).
+### Client
 
-## How it works
+Uses React and nextJS + there some material-UI sprinkled in.
 
-- Once your project is ready, fork this repo and clone the fork on your computer.
-- Copy all the code from your project to that clone (without overwriting its `.git` folder), and include any dotfiles (which are hidden files starting with a dot, typically used for configuration purposes).
-- Commit all your code and push it to your fork.
-- Send a pull request (feel free to add a comment to your PR, in case it’s useful for the reviewer).
-- You will receive a notification on GitHub once the code review is completed.
+- index is just a index page
+- list will do requests for make, model, gen and engine and will display clickable options. Once they're selected user is rerouted to /build/info
+- info page will show all of the information about car components and parts to swap them with, once the selected hp is bigger than what part can handle it will start animation to show it should be swapped
+
+### Server
+
+Uses Express with mySQL as database(not the smallest may I add.) and Sequelize as ORM
+
+- standart structure, index === index, router === router, models(sequelize) === models, all requests are handled in controller
