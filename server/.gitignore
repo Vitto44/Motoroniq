@@ -17,7 +17,7 @@ pids
 # Optional npm cache directory
 .npm
 
-config.json
+/config
 private
 build
 dist

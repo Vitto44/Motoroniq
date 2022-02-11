@@ -8,7 +8,7 @@ require("dotenv").config();
 app.use(cors());
 app.use(router);
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4444;
 db.sequelize.sync({ alter: true }).then(() => {
   app.listen(PORT, () =>
     console.log(`🤖 You good Boss! (☞ﾟヮﾟ)☞ http://localhost:${PORT} ☜(ﾟヮﾟ☜)`)

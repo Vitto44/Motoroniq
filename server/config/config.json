@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "0000",
-    "database": "motoroniq",
+    "database": "motoroniq-test",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
@@ -10,14 +10,14 @@
   "test": {
     "username": "root",
     "password": "0000",
-    "database": "motoroniq",
+    "database": "motoroniq-test",
     "host": "localhost",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": null,
-    "database": "motoroniq",
+    "database": "motoroniq-test",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
