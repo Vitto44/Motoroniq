@@ -11,7 +11,7 @@ pids
 *.seed
 
 
-# Dependency directories
+# Dependencies
 /node_modules
 
 # Optional npm cache directory

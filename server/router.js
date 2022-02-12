@@ -4,7 +4,7 @@ const bp = require("body-parser");
 router.use(bp.json());
 // router.use(bp.urlencoded({ extended: true }));
 
-router.get("/", (req, res) => res.send("<h1>Heya boss ´◕ ◡ ◕｀</h1>"));
+router.get("/", (__, res) => res.send("<h1>Heya boss ´◕ ◡ ◕｀</h1>"));
 router.get("/getMakes", controller.getMakes);
 router.post("/getModels", controller.getModels);
 router.post("/getGens", controller.getGenerations);
