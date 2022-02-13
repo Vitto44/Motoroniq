@@ -142,4 +142,4 @@ npm run dev
 
 # Developers
 
-- Viktor Hajdu - [GitHub](https://github.com/Vitto44) - [LinkedIn](https://www.linkedin.com/in/viktor-hajdu/)
+- Viktor Hajdu - [GitHub](https://github.com/Vitto44) - [LinkedIn](https://www.linkedin.com/in/vito-hajdu/)
